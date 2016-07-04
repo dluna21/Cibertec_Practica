@@ -1,0 +1,68 @@
+﻿@model IEnumerable<WebDeveloper.Model.Employees>
+@using WebDeveloper.Helpers
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Employee</h2>
+@Html.ActionLink("New Employee", "Create")
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TitleOfCourtesy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HireDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Region)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostalCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HomePhone)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.LastName</td>
+            <td>@item.FirstName</td>
+            <td>@item.Title</td>
+            <td>@item.TitleOfCourtesy</td>
+            <td>@Html.DisplayDateOrNull(@item.BirthDate)</td>
+            <td>@Html.DisplayDateOrNull(@item.HireDate)</td>
+            <td>@item.Country</td>
+            <td>@item.Region</td>
+            <td>@item.City</td>
+            <td>@item.Address</td>
+            <td>@item.PostalCode</td>
+            <td>@item.HomePhone</td>
+            <td>@Html.ActionLink("Edit", "Edit", new { id = item.EmployeeID}) | @Html.ActionLink("Delete", "Delete", new { id = item.EmployeeID }) </td>
+        </tr>
+    }
+</table>
+

@@ -1,0 +1,28 @@
+﻿@model WebDeveloper.Model.Employees
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <table>
+        @Html.HiddenFor(model => model.EmployeeID)
+        <tr><td><span>Last Name</span></td><td>@Html.DisplayFor(model => model.LastName)</td></tr>
+        <tr><td><span>First Name</span></td><td>@Html.DisplayFor(model => model.FirstName)</td></tr>
+        <tr><td><span>Title</span></td><td>@Html.DisplayFor(model => model.Title)</td></tr>
+        <tr><td><span>Title of Courtesy</span></td><td>@Html.DisplayFor(model => model.TitleOfCourtesy)</td></tr>
+        <tr><td><span>Birth Date</span></td><td>@Html.DisplayFor(model => model.BirthDate)</td></tr>
+        <tr><td><span>Hire Date</span></td><td>@Html.DisplayFor(model => model.HireDate)</td></tr>
+        <tr><td><span>Country</span></td><td> @Html.DisplayFor(model => model.Country)</td></tr>
+        <tr><td><span>Region</span></td><td> @Html.DisplayFor(model => model.Region)</td></tr>
+        <tr><td><span>City</span></td><td>@Html.DisplayFor(model => model.City)</td></tr>
+        <tr><td><span>Address</span></td><td>@Html.DisplayFor(model => model.Address)</td></tr>
+        <tr><td><span>Postal Code</span></td><td>@Html.DisplayFor(model => model.PostalCode)</td></tr>
+        <tr><td><span>Home Phone</span></td><td>@Html.DisplayFor(model => model.HomePhone)</td></tr>
+    </table>
+    <input type="submit" value="Delete" />
+}

@@ -1,0 +1,27 @@
+﻿@model WebDeveloper.Model.Employees
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm())
+{   @Html.AntiForgeryToken()
+    <table>
+        <tr><td><span></span></td><td>@Html.HiddenFor(model => model.EmployeeID)</td></tr>
+        <tr><td><span>Last Name</span></td><td>@Html.EditorFor(model => model.LastName)</td></tr>
+        <tr><td><span>First Name</span></td><td>@Html.EditorFor(model => model.FirstName)</td></tr>
+        <tr><td><span>Title</span></td><td>@Html.EditorFor(model => model.Title)</td></tr>
+        <tr><td><span>Title of Courtesy</span></td><td>@Html.EditorFor(model => model.TitleOfCourtesy)</td></tr>
+        <tr><td><span>Birth Date</span></td><td>@Html.TextBoxFor(model => model.BirthDate, new { @Value = String.Format("{0:yyyy-MM-dd}",Model.BirthDate), type = "date" })</td></tr>
+        <tr><td><span>Hire Date</span></td><td>@Html.TextBoxFor(model => model.HireDate, new { @Value = String.Format("{0:yyyy-MM-dd}", Model.HireDate), type = "date" })</td></tr>
+        <tr><td><span>Country</span></td><td>@Html.EditorFor(model => model.Country)</td></tr>
+        <tr><td><span>Region</span></td><td>@Html.EditorFor(model => model.Region)</td></tr>
+        <tr><td><span>City</span></td><td>@Html.EditorFor(model => model.City)</td></tr>
+        <tr><td><span>Address</span></td><td>@Html.EditorFor(model => model.Address)</td></tr>
+        <tr><td><span>Postal Code</span></td><td>@Html.EditorFor(model => model.PostalCode)</td></tr>
+        <tr><td><span>Home Phone</span></td><td>@Html.EditorFor(model => model.HomePhone)</td></tr>
+    </table>
+    <br />
+    <input type="submit" value="Edit" />
+}
+
